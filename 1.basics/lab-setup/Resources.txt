@@ -1,0 +1,84 @@
+links:
+-------
+https://www.hackingarticles.in/web-application-pentest-lab-setup-using-docker/
+https://medium.com/@riddhishsarode13/web-application-pentest-lab-setup-using-docker-install-docker-and-start-hacking-2b6722717fb5
+https://6point6.co.uk/insights/running-vulnerable-docker-containers-in-minutes/
+https://www.sans.org/reading-room/whitepapers/testing/docker-create-multi-container-environments-research-sharing-lateral-movement-37855
+https://github.com/kaiiyer/awesome-vulnerable
+https://hub.docker.com/search?q=vulnerable&type=image
+https://github.com/vulhub/vulhub
+https://www.vulnhub.com/
+
+
+vulnerable labs:
+================
+dvwa
+webgoat
+bwapp
+jucie shop
+metaspoitable2
+
+Vulnerable LAB Docker Containers Setup:
+============
+web-dvwa (damn vulnerable web application)
+sudo docker pull vulnerables/web-dvwa
+sudo docker create --name dvwa -p 80:80 -it vulnerables/web-dvwa /bin/bash
+sudo docker start dvwa
+sudo docker exec -it dvwa /bin/bash
+https://www.google.com/recaptcha/admin/site/437599645/setup
+6LedPRUaAAAAAHNz7OibZK4zKY-PVxGqGt_kdrjf
+6LedPRUaAAAAABfGeIjtnAf45ZXgYPwH_EyU1c-G
+place two tokens in /var/www/html/config/config.inc.php
+fix missing configs in /etc/php/7.0/apache2/php.ini
+restart apache
+click on set database
+configure DVWA security
+#all done
+sudo docker stop dvwa
+
+============
+WebGoat (OWASP)
+sudo docker pull szsecurity/webgoat
+sudo docker create --name webgoat -p 80:8080 -it szsecurity/webgoat /bin/bash
+sudo docker start webgoat
+sudo docker exec -it webgoat /bin/bash
+cd /tmp/
+java -jar webgoat.jar
+http://172.17.0.2:8080/WebGoat
+http://127.0.0.1:80/WebGoat
+#all done
+sudo docker stop webgoat
+
+============
+bWAPP (buggy Web APPlication)
+sudo docker pull raesene/bwapp                    
+sudo docker create --name bwapp -p 8080:80 -it raesene/bwapp          
+sudo docker start bwapp
+sudo docker exec -it bwapp /bin/bash
+http://127.0.0.1:8080/install.php
+http://127.0.0.1:8080/install.php?install=yes
+#all done
+sudo docker stop bwapp
+
+============
+OWASP Juice Shop
+sudo docker pull bkimminich/juice-shop
+sudo docker create --name juicy -p 80:3000 -it bkimminich/juice-shop
+sudo docker start juicy
+sudo docker exec -it juicy /bin/sh
+http://127.0.0.1:80
+http://172.17.0.2:3000
+#all done
+sudo docker stop juicy
+
+============
+metasploitable2
+sudo docker pull tleemcjr/metasploitable2
+sudo docker create --name meta2 -it tleemcjr/metasploitable2          
+sudo docker start meta2
+sudo docker exec -it meta2 /bin/bash
+ifconfig
+exit
+nmap 172.17.0.2
+#all done
+sudo docker stop meta2
