@@ -39,7 +39,7 @@ sudo docker stop dvwa
 ============
 WebGoat (OWASP)
 sudo docker pull szsecurity/webgoat
-sudo docker create --name webgoat -p 80:8080 -it szsecurity/webgoat /bin/bash
+sudo docker create --name webgoat -p 80:80 -it szsecurity/webgoat /bin/bash
 sudo docker start webgoat
 sudo docker exec -it webgoat /bin/bash
 cd /tmp/
