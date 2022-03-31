@@ -1,4 +1,4 @@
-# Lab setup
+# Lab setup: Docker in Kali Linux VM
 
 ## 01. damn vulnerable web application([dvwa](https://dvwa.co.uk/)):
 Damn Vulnerable Web App (DVWA) is a PHP/MySQL web application that is damn vulnerable. Its main goals are to be an aid for security professionals to test their skills and tools in a legal environment, help web developers better understand the processes of securing web applications and aid teachers/students to teach/learn web application security in a class room environment.
@@ -32,3 +32,17 @@ What I did:
 
 ## 05. metasploitable2
 an intentionally vulnerable Linux distribution and is also a highly effective security training tool. It comes fully loaded with a large number of vulnerable network services and also includes several vulnerable web applications.
+
+# Lab setup: Host machine setup
+
+## Vagrant by HashiCorp
+Vagrant is an open-source software product for building and maintaining portable virtual software development environments; e.g., for VirtualBox, KVM, Hyper-V, Docker containers, VMware, and AWS. It tries to simplify the software configuration management of virtualization in order to increase development productivity.
+
+Installation :
+ 1. Install vagrant from this address based on your OS : https://www.vagrantup.com/downloads.html
+ 2. Download Vagrantfile from this address : https://raw.githubusercontent.com/rapid7/metasploitable3/master/Vagrantfile
+ 3. Run "vagrant plugin install winrm winrm-fs vagrant-vbguest winrm-elevated vagrant-reload"
+ 4. Run "vagrant up --provider virtualbox" on your cmd or bash or sh whatever shell you have where your Vagrantfile is located.
+ 5. Wait for the download and vagrant does everything for you
+ 6. comment ubuntu part in Vagrantfile and run "vagrant up --provider virtualbox" again for win2k8 setup.
+ 7. Run virtualbox and you have both os up and running
